@@ -1,11 +1,13 @@
 Rails.application.routes.draw do
-  get 'home/index'
+
+  get '/bemvindo' => 'home#index'
+
   root 'home#index'
 
   resources :phones
   resources :addresses
-  resources :contacts
-  resources :kinds
+  resources :contacts  #, only: [:index, :new, :create]
+  resources :kinds   #, except: [:edit, :new]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
