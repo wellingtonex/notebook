@@ -15,10 +15,12 @@ class ContactsController < ApplicationController
   # GET /contacts/new
   def new
     @contact = Contact.new
+    kinds_of_select
   end
 
   # GET /contacts/1/edit
   def edit
+    kinds_of_select
   end
 
   # POST /contacts
@@ -70,5 +72,9 @@ class ContactsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def contact_params
       params.require(:contact).permit(:nome, :email, :kind_id, :rmk)
+    end
+
+    def kinds_of_select
+      @kind_of_select = Kind.all
     end
 end

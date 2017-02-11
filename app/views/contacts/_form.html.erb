@@ -20,8 +20,8 @@
     <%= f.text_field :email %>
   </div>
   <div class="field">
-    <%= f.label :kind_id %><br>
-    <%= f.text_field :kind_id %>
+    <%= f.label :kind_id %><br>    
+    <%= collection_select(:contact, :kind_id, @kind_of_select, :id, :descricption) %>
   </div>
   <div class="field">
     <%= f.label :rmk %><br>
